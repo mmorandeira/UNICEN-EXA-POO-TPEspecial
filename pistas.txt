@@ -1,0 +1,14 @@
+;;;;;;;
+;ID;Título;Duración;Intérprete;Título del Álbum;Año;Género
+;1;El Tiempo No Para;311;Bersuit Vergabarat;De la cabeza;2002;Rock nacional
+;2;Mi caramelo;290;Bersuit Vergabarat;De la cabeza;2002;Rock nacional
+;3;Party Rock Anthem;408;LMFAO;Sorry for Party Rocking;2011;Electro pop
+;4;Sorry for Party Rocking;421;LMFAO;Sorry for Party Rocking;2011;Electro pop
+;5;Fix you;255;Coldplay;X&Y;2005;Rock alternativo
+;6;Speed of Sound;455;Coldplay;X&Y;2005;Rock alternativo
+;7;Viva la vida;320;Coldplay;Viva la vida;2008;Rock alternativo
+;8;Whit or whitout you;360;U2;The Joshua Tree;1987;Rock
+;9;Vertigo;355;U2;How to Dismantle an Atomic Bomb;2004;Rock
+;10;City of Blinding Lights;284;U2;How to Dismantle an Atomic Bomb;2004;Rock
+;11;A la luz de la luna;438;El Indio Solari;Pajaritos, bravos muchachitos;2013;Rock nacional
+;12;Yo Canibal;258;Patricio rey y sus redonditos de ricota;"Lobo Suelto, Cordero atado";1993;Rock nacional
