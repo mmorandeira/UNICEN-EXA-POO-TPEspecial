@@ -7,6 +7,6 @@ public class FiltoAND implements Filtro
 
     @Override
     public Boolean compara(Pista cancion) {
-
+        Filtro
     }
 }
