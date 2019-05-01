@@ -2,6 +2,8 @@ package moran;
 
 import java.util.ArrayList;
 
+
+//implementacion con lista de playlisto o listas de canciones.
 public class Playlist
     {
     private String nombre;
@@ -27,7 +29,10 @@ public class Playlist
             return nombre;
     }
 
+   //tamaño mal echo
+   /*
     public int getTamaño()
+
     {
         int tam=0;
         for(Pista a: listaCanciones)
@@ -36,7 +41,9 @@ public class Playlist
             }
         return tam;
     }
+    */
 
+    public int getTamaño(){return listaCanciones.size()}
     public int getDuracion(){
         int tam=0;
         for(Pista a: listaCanciones)
@@ -46,7 +53,13 @@ public class Playlist
         return tam;
     }
 
-
-
+    public void agregarCancion(Pista cancion)
+    {
+        listaCanciones.add(cancion)
+    }
+    public boolean estaVacia()
+    {
+        return listaCanciones.isEmpty();
+    }
 
     }
