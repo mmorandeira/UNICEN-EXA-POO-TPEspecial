@@ -6,17 +6,17 @@ public class FDuracion extends Filtro{
 
 
 
-    private int anio;
+    private int tiempo;
 
-    public FAnio(int anio)
+    public FAnio(int tiempo)
     {
-        this.anio=anio;
+        this.tiempo=tiempo;
     }
 
     public Boolean compara (Pista cancion)
     {
-        return (cancion.getAnio()< anio);
+        return (cancion.getDuracion()< tiempo);
     }
 
 }
-}
+
