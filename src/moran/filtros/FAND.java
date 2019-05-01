@@ -2,7 +2,7 @@ package moran.filtros;
 
 import moran.Pista;
 
-public class FiltoAND extends Filtro {
+public class FAND extends Filtro {
 
     private Filtro primero;
     private Filtro segundo;
@@ -11,7 +11,7 @@ public class FiltoAND extends Filtro {
     public Boolean compara(Pista cancion)
     {
 
-
+        return primero.compara(cancion) && segundo.compara(cancion);
     }
 
 }
