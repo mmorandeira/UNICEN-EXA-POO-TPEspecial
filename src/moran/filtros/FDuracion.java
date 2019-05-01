@@ -4,8 +4,6 @@ import moran.Pista;
 
 public class FDuracion extends Filtro{
 
-
-
     private int tiempo;
 
     public FAnio(int tiempo)
@@ -17,6 +15,5 @@ public class FDuracion extends Filtro{
     {
         return (cancion.getDuracion()< tiempo);
     }
-
 }
 
