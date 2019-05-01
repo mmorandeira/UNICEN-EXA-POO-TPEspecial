@@ -14,7 +14,6 @@ public class FOR extends Filtro {
     }
     public Boolean compara(Pista cancion)
     {
-
         return primero.compara(cancion) || segundo.compara(cancion);
     }
 
