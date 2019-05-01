@@ -7,6 +7,11 @@ public class FAND extends Filtro {
     private Filtro primero;
     private Filtro segundo;
 
+    public FAND(Filtro uno,Filtro dos)
+    {
+        this.segundo=dos;
+        this.primero=uno;
+    }
 
     public Boolean compara(Pista cancion)
     {
