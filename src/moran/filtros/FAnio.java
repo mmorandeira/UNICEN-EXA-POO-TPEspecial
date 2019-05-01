@@ -13,7 +13,7 @@ private int anio;
 
     public Boolean compara (Pista cancion)
     {
-        return (cancion.getAnio() < anio);
+        return (cancion.getAnio()< anio);
     }
 
 }
