@@ -2,11 +2,8 @@ package moran.filtros;
 
 import moran.Pista;
 
-public class FiltoAND implements Filtro
-{
+public class FiltoAND extends Filtro {
 
-    @Override
-    public Boolean compara(Pista cancion) {
-        Filtro
-    }
+    public Boolean compara(Pista cancion);
+
 }
