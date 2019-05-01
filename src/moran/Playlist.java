@@ -34,7 +34,15 @@ public class Playlist
             {
             tam++;
             }
-        return tam
+        return tam;
     }
 
+    public int duracion(){
+        int tam=0;
+        for(Pista a: listaCanciones)
+        {
+            tam+=a.getDuracion();
+        }
+        return tam;
+    }
     }
