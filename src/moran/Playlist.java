@@ -37,7 +37,7 @@ public class Playlist
         return tam;
     }
 
-    public int duracion(){
+    public int getDuracion(){
         int tam=0;
         for(Pista a: listaCanciones)
         {
@@ -45,4 +45,8 @@ public class Playlist
         }
         return tam;
     }
+
+
+
+
     }
