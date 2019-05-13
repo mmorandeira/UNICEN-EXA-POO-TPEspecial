@@ -18,13 +18,13 @@ public class Main {
         sc.nextLine();
         while (sc.hasNext()) {
             int id = Integer.parseInt(sc.next());
-            String titulo = sc.next();
-            int duracion = Integer.parseInt(sc.next());
-            String artista = sc.next();
-            String tituloAlbum = sc.next();
-            int anio = Integer.parseInt(sc.next());
-            String genero = sc.next();
-            Pista p1 = new Pista(id, duracion, anio, titulo, artista, tituloAlbum, genero, "denunciado maquinola");
+            String title = sc.next();
+            int duration = Integer.parseInt(sc.next());
+            String artist = sc.next();
+            String albumTitle = sc.next();
+            int year = Integer.parseInt(sc.next());
+            String genre = sc.next();
+            Track p1 = new Track(id, duration, year, title, artist, albumTitle, genre, "denunciado maquinola");
             if (sc.hasNextLine()) sc.nextLine();
             System.out.println(p1);
         }

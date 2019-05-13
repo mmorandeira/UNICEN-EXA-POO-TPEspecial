@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Playlist
     {
     private String nombre;
-    private ArrayList<Pista> listaCanciones;
+    private ArrayList<Pista> ;
     private int tamaño;
 
     public Playlist(String nombre,ArrayList<Pista> listita)
