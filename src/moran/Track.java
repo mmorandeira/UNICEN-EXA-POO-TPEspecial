@@ -22,17 +22,15 @@ public class Track extends Element {
         this.comments = comments;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Track track = (Track) o;
-        return id == track.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+    public Track(Track trackToCopy) {
+        super(trackToCopy.getName());
+        this.id = trackToCopy.id;
+        this.duration = trackToCopy.duration;
+        this.year = trackToCopy.year;
+        this.artist = trackToCopy.artist;
+        this.albumTitle = trackToCopy.albumTitle;
+        this.genre = trackToCopy.genre;
+        this.comments = trackToCopy.comments;
     }
 
     public int getDuration() {
@@ -117,5 +115,23 @@ public class Track extends Element {
             return aux;
         }
         return null;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Track track = (Track) o;
+        return id == track.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return (Track) super.clone();
     }
 }

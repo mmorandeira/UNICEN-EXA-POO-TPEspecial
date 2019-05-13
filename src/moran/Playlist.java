@@ -1,8 +1,7 @@
 package moran;
 
-import java.util.ArrayList;
+import java.util.Vector;
 
-
-//implementacion con lista de playlisto o listas de canciones.
 public class Playlist {
+
 }

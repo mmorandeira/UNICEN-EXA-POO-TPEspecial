@@ -2,7 +2,7 @@ package moran;
 
 import java.util.Vector;
 
-public abstract class Element {
+public abstract class Element implements Cloneable {
     private String name;
 
     public abstract int totalDuration();
