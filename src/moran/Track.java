@@ -1,19 +1,21 @@
 package moran;
 
 import java.util.Objects;
+import java.util.Vector;
 
-public class Track {
+public class Track extends Element {
     int id, duration, year;
+    public final int size = 1;
 
     public int getId() {
         return id;
     }
 
-    public Track(int id, int duration, int year, String title, String artist, String albumTitle, String genre, String comments) {
+    public Track(int id, int duration, int year, String name, String artist, String albumTitle, String genre, String comments) {
+        super(name);
         this.id = id;
         this.duration = duration;
         this.year = year;
-        this.title = title;
         this.artist = artist;
         this.albumTitle = albumTitle;
         this.genre = genre;
@@ -49,14 +51,6 @@ public class Track {
         this.year = year;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getArtist() {
         return artist;
     }
@@ -79,9 +73,9 @@ public class Track {
                 "id=" + id +
                 ", duracion=" + duration +
                 ", anio=" + year +
-                ", titulo='" + title + '\'' +
+                ", titulo='" + this.getName() + '\'' +
                 ", artista='" + artist + '\'' +
-                ", tituloAlbum='" + title + '\'' +
+                ", tituloAlbum='" + albumTitle + '\'' +
                 ", genero='" + genre + '\'' +
                 ", comentarios='" + comments + '\'' +
                 '}';
@@ -103,5 +97,25 @@ public class Track {
         this.comments = comments;
     }
 
-    String title, artist, albumTitle, genre, comments;
+    String artist, albumTitle, genre, comments;
+
+    @Override
+    public int totalDuration() {
+        return duration;
+    }
+
+    @Override
+    public int size() {
+        return size;
+    }
+
+    @Override
+    public Vector<Element> find(Filter filter) {
+        if (filter.accept(this)) {
+            Vector<Element> aux = new Vector<Element>();
+            aux.add(this);
+            return aux;
+        }
+        return null;
+    }
 }
