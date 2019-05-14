@@ -4,7 +4,7 @@ import moran.filters.Filter;
 
 import java.util.Vector;
 
-public abstract class Element implements Cloneable {
+public abstract class Element { //implements Cloneable {
     private String name;
 
     public abstract int totalDuration();
@@ -24,5 +24,9 @@ public abstract class Element implements Cloneable {
     }
 
     public abstract Vector<Element> find(Filter filter);
+
+    public abstract boolean remove(Track track);
+
+    public abstract Element copy(); //nose como implementar cloneable
 
 }

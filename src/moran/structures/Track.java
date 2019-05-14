@@ -111,12 +111,11 @@ public class Track extends Element {
 
     @Override
     public Vector<Element> find(Filter filter) {
+        Vector<Element> aux = new Vector<Element>();
         if (filter.accept(this)) {
-            Vector<Element> aux = new Vector<Element>();
             aux.add(this);
-            return aux;
         }
-        return null;
+        return aux;
     }
 
     @Override
@@ -132,8 +131,21 @@ public class Track extends Element {
         return Objects.hash(id);
     }
 
+    /*
     @Override
     public Object clone() throws CloneNotSupportedException {
         return (Track) super.clone();
+    }
+    */
+
+    @Override
+    public Track copy() {
+        Track aux = new Track(this);
+        return aux;
+    }
+
+    @Override
+    public boolean remove(Track track) {
+        return this.equals(track);
     }
 }
