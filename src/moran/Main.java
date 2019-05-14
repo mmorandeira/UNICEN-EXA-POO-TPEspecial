@@ -1,5 +1,7 @@
 package moran;
 
+import moran.structures.Track;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;

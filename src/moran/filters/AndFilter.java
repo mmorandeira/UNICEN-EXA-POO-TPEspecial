@@ -1,6 +1,6 @@
-package moran;
+package moran.filters;
 
-import javax.swing.text.StyledEditorKit;
+import moran.structures.Track;
 
 public class AndFilter implements Filter {
     private Filter filter1, filter2;

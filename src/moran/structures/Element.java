@@ -1,4 +1,6 @@
-package moran;
+package moran.structures;
+
+import moran.filters.Filter;
 
 import java.util.Vector;
 

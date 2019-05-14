@@ -1,4 +1,4 @@
-package moran;
+package moran.structures;
 
 import java.util.Vector;
 

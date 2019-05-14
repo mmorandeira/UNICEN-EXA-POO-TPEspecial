@@ -1,4 +1,6 @@
-package moran;
+package moran.filters;
+
+import moran.structures.Track;
 
 public class OrFilter implements Filter {
     private Filter filter1, filter2;

@@ -1,14 +1,16 @@
-package moran;
+package moran.filters;
+
+import moran.structures.Track;
 
 public class NotFilter implements Filter {
-    private Filter filterOne;
+    private Filter filter1;
 
     public NotFilter(Filter filter) {
-        this.filterOne = filter;
+        this.filter1 = filter;
     }
 
     @Override
     public boolean accept(Track track) {
-        return !filterOne.accept(track);
+        return !filter1.accept(track);
     }
 }

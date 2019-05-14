@@ -1,14 +1,13 @@
-package moran;
+package moran.filters;
+
+import moran.structures.Track;
 
 public class DurationFilter implements Filter {
-
-
     private int maxDuration;
 
     public DurationFilter(int maxDuration) {
         this.maxDuration = maxDuration;
     }
-
 
     public void setMaxDuration(int maxDuration) {
         this.maxDuration = maxDuration;
