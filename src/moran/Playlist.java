@@ -42,7 +42,6 @@ public class Playlist
         return tam;
     }
     */
-
     public int getTamaño(){return listaCanciones.size()}
     public int getDuracion(){
         int tam=0;
