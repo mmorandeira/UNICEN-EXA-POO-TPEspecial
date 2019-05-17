@@ -3,22 +3,16 @@ package moran.filters;
 import moran.structures.Track;
 
 public class YearFilter implements Filter {
-    int year;
+    private int year;
+    private Comparator comp;
 
-    public YearFilter(int year) {
+    public YearFilter(int year, Comparator comp) {
         this.year = year;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
+        this.comp = comp;
     }
 
     @Override
     public boolean accept(Track track) {
-        return track.getYear() == this.year;
+        return this.comp.comparar(track.getYear(), this.year);
     }
 }
