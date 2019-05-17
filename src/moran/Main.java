@@ -1,6 +1,5 @@
 package moran;
 
-import moran.filters.*;
 import moran.structures.Playlist;
 import moran.structures.Track;
 
