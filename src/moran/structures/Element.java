@@ -25,8 +25,6 @@ public abstract class Element { //implements Cloneable {
 
     public abstract Vector<Element> find(Filter filter);
 
-    public abstract boolean remove(Track track);
-
     public abstract Element copy(); //nose como implementar cloneable
 
 }

@@ -69,16 +69,13 @@ public class Track extends Element {
 
     @Override
     public String toString() {
-        return "Pista{" +
-                "id=" + id +
-                ", duracion=" + duration +
-                ", anio=" + year +
-                ", titulo='" + this.getName() + '\'' +
-                ", artista='" + artist + '\'' +
-                ", tituloAlbum='" + albumTitle + '\'' +
-                ", genero='" + genre + '\'' +
-                ", comentarios='" + comments + '\'' +
-                '}';
+        return "Pista{ " + this.getId() +
+                " - " + this.getName() +
+                " - " + this.getArtist() +
+                " - " + this.getAlbumTitle() +
+                " - (" + this.getGenre() +
+                "," + this.getYear()  +
+                ") }";
     }
 
     public String getGenre() {
@@ -131,21 +128,10 @@ public class Track extends Element {
         return Objects.hash(id);
     }
 
-    /*
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        return (Track) super.clone();
-    }
-    */
-
     @Override
     public Track copy() {
         Track aux = new Track(this);
         return aux;
     }
 
-    @Override
-    public boolean remove(Track track) {
-        return this.equals(track);
-    }
 }

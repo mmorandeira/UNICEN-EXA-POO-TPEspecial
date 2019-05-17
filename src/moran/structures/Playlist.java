@@ -21,11 +21,6 @@ public class Playlist extends Element {
         String aux = "{\n";
         for (int i = 0; i < elementVector.size(); i++) {
             aux += i + ": " + elementVector.elementAt(i).toString() + "\n";
-            /*
-            if (i + 1 < elementVector.size()) {
-                aux += "\n";
-            }
-            */
         }
         aux += "}";
         return aux;
@@ -59,27 +54,6 @@ public class Playlist extends Element {
     }
 
     @Override
-    public boolean remove(Track track) {
-        for (Element element : elementVector) {
-            if (element.remove(track)) {
-                elementVector.remove(element);
-            }
-        }
-        return elementVector.size() == 0;
-    }
-
-    /*
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        Playlist copy = new Playlist(this.getName());
-        for(Element element:elementVector){
-            copy.add(element.clone());
-        }
-        return ;
-    }
-    */
-
-    @Override
     public Playlist copy() {
         Playlist copy = new Playlist("Copia de " + this.getName());
         for (Element element : elementVector) {
@@ -88,6 +62,4 @@ public class Playlist extends Element {
         return copy;
     }
 
-    public void test() {
-    }
 }
