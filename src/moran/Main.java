@@ -1,5 +1,6 @@
 package moran;
 
+import moran.filters.*;
 import moran.structures.Playlist;
 import moran.structures.Track;
 
@@ -34,6 +35,7 @@ public class Main {
             //System.out.println(p1);
             trackVector.add(p1);
             master.add(p1);
+            sc.nextLine();
         }
         sc.close();
         //System.out.println("hola");
@@ -49,5 +51,14 @@ public class Main {
         copy = trackVector.elementAt(0).copy();
         //System.out.println(copy);
         System.out.println(master);
+        /*
+        Comparator c1 = new Comparator(ComparatorMode.MAYOR);
+        YearFilter f1 = new YearFilter(2006,c1);
+        for(Track track:trackVector){
+            if(f1.accept(track)){
+                System.out.println(track);
+            }
+        }
+        */
     }
 }
