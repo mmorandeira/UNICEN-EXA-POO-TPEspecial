@@ -87,4 +87,7 @@ public class Playlist extends Element {
         }
         return copy;
     }
+
+    public void test() {
+    }
 }
