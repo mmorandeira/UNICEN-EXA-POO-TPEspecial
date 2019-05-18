@@ -13,6 +13,6 @@ public class DurationFilter implements Filter {
 
     @Override
     public boolean accept(Track track) {
-        return this.comparator.comparar(track.getDuration(), this.duration);
+        return this.comparator.compare(track.getDuration(), this.duration);
     }
 }

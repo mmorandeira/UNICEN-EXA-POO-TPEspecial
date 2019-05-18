@@ -13,6 +13,6 @@ public class YearFilter implements Filter {
 
     @Override
     public boolean accept(Track track) {
-        return this.comp.comparar(track.getYear(), this.year);
+        return this.comp.compare(track.getYear(), this.year);
     }
 }
