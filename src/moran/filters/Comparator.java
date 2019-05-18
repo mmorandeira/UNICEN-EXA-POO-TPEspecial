@@ -1,17 +1,17 @@
 package moran.filters;
 
 public class Comparator {
-    ComparatorMode modo;
+    ComparatorMode mode;
 
-    public Comparator(ComparatorMode modo) {
-        this.modo = modo;
+    public Comparator(ComparatorMode mode) {
+        this.mode = mode;
     }
 
     public boolean comparar(Comparable c1, Comparable c2) {
         int res = c1.compareTo(c2);
-        if (modo == ComparatorMode.EQUAL && res == 0) return true;
-        if (modo == ComparatorMode.GREATER && res > 0) return true;
-        if (modo == ComparatorMode.LESS && res < 0) return true;
+        if (mode == ComparatorMode.EQUAL && res == 0) return true;
+        if (mode == ComparatorMode.GREATER && res > 0) return true;
+        if (mode == ComparatorMode.LESS && res < 0) return true;
         return false;
     }
 }
