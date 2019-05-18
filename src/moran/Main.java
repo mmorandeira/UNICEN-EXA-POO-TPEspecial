@@ -51,7 +51,7 @@ public class Main {
         //System.out.println(copy);
         System.out.println(master);
         /*
-        Comparator c1 = new Comparator(ComparatorMode.MAYOR);
+        Comparator c1 = new Comparator(ComparatorMode.GREATER);
         YearFilter f1 = new YearFilter(2006,c1);
         for(Track track:trackVector){
             if(f1.accept(track)){
