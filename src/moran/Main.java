@@ -1,5 +1,6 @@
 package moran;
 
+import moran.filters.*;
 import moran.structures.Playlist;
 import moran.structures.Track;
 
@@ -59,5 +60,51 @@ public class Main {
             }
         }
         */
+
+        ///2
+
+        Playlist clasicosDelRock = new Playlist("Clasicos del Rock");
+        clasicosDelRock.add(trackVector.elementAt(0).copy());
+        clasicosDelRock.add(trackVector.elementAt(1).copy());
+        clasicosDelRock.add(trackVector.elementAt(7).copy());
+        clasicosDelRock.add(trackVector.elementAt(8).copy());
+        clasicosDelRock.add(trackVector.elementAt(9).copy());
+        clasicosDelRock.add(trackVector.elementAt(11).copy());
+
+        Playlist loMejor = new Playlist("Lo Mejor");
+        loMejor.add(trackVector.elementAt(2).copy());
+        loMejor.add(trackVector.elementAt(3).copy());
+        loMejor.add(trackVector.elementAt(6).copy());
+        loMejor.add(trackVector.elementAt(11).copy());
+
+        Playlist coldplay = new Playlist("Clodplay");
+        coldplay.add(trackVector.elementAt(4).copy());
+        coldplay.add(trackVector.elementAt(5).copy());
+        coldplay.add(trackVector.elementAt(6).copy());
+
+        Playlist elIndio = new Playlist("El Indio");
+        elIndio.add(trackVector.elementAt(10).copy());
+        elIndio.add(trackVector.elementAt(11).copy());
+
+        /// 3
+        System.out.println(clasicosDelRock);
+        System.out.println(loMejor);
+        System.out.println(coldplay);
+
+        /// 4
+
+        Comparator igual = new Comparator(ComparatorMode.EQUAL);
+        Comparator menor = new Comparator(ComparatorMode.LESS);
+        Comparator mayor = new Comparator(ComparatorMode.GREATER);
+        //a
+        System.out.println(master.find(new DurationFilter(400, mayor)));
+        //b
+        System.out.println(master.find(new GenreFilter("rock")));
+        //c
+        System.out.println(master.find(new AndFilter(new TitleFilter("rock"), new NotFilter(new ArtistFilter("LMFAO")))));
+        //d
+        System.out.println(master.find(new OrFilter(new AndFilter(new GenreFilter("rock"), new YearFilter(2006, mayor)), new AndFilter(new GenreFilter("rock"), new ArtistFilter("coldplay")))));
+        /// 5
+
     }
 }
