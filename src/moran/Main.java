@@ -1,10 +1,13 @@
 package moran;
 
+import moran.filters.*;
+import moran.structures.Element;
 import moran.structures.Playlist;
 import moran.structures.Track;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.time.Year;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -37,27 +40,89 @@ public class Main {
             sc.nextLine();
         }
         sc.close();
-        //System.out.println("hola");
-        Track copy;
-        /*
-        try {
-            copy = (Track) trackVector.elementAt(0).clone();
-            System.out.println(copy);
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
-        */
-        copy = trackVector.elementAt(0).copy();
-        //System.out.println(copy);
-        System.out.println(master);
-        /*
-        Comparator c1 = new Comparator(ComparatorMode.GREATER);
-        YearFilter f1 = new YearFilter(2006,c1);
-        for(Track track:trackVector){
-            if(f1.accept(track)){
-                System.out.println(track);
-            }
-        }
-        */
+//        //System.out.println("hola");
+//        Track copy;
+//        /*
+//        try {
+//            copy = (Track) trackVector.elementAt(0).clone();
+//            System.out.println(copy);
+//        } catch (CloneNotSupportedException e) {
+//            e.printStackTrace();
+//        }
+//        */
+//        copy = trackVector.elementAt(0).copy();
+//        //System.out.println(copy);
+//        System.out.println(master);
+//        /*
+//        Comparator c1 = new Comparator(ComparatorMode.GREATER);
+//        YearFilter f1 = new YearFilter(2006,c1);
+//        for(Track track:trackVector){
+//            if(f1.accept(track)){
+//                System.out.println(track);
+//            }
+//        }
+//        */
+
+        // Step 1 of the guide
+        Playlist clasicosDelRock = new Playlist("Clasicos del Rock");
+        clasicosDelRock.add(trackVector.elementAt(0));
+        clasicosDelRock.add(trackVector.elementAt(1));
+        clasicosDelRock.add(trackVector.elementAt(7));
+        clasicosDelRock.add(trackVector.elementAt(8));
+        clasicosDelRock.add(trackVector.elementAt(9));
+        clasicosDelRock.add(trackVector.elementAt(11));
+        Playlist loMejor = new Playlist("Lo mejor");
+        loMejor.add(trackVector.elementAt(2));
+        loMejor.add(trackVector.elementAt(3));
+        loMejor.add(trackVector.elementAt(6));
+        loMejor.add(trackVector.elementAt(11));
+        Playlist coldplay = new Playlist("Coldplay");
+        coldplay.add(trackVector.elementAt(4));
+        coldplay.add(trackVector.elementAt(5));
+        coldplay.add(trackVector.elementAt(6));
+        Playlist elIndio = new Playlist("EL Indio");
+        elIndio.add(trackVector.elementAt(10));
+        elIndio.add(trackVector.elementAt(11));
+
+        // Step 2 of the guide
+        System.out.println(clasicosDelRock);
+        System.out.println(loMejor);
+        System.out.println(coldplay);
+
+        // Step 3 of the guide
+        Vector<Element> founds = new Vector<Element>();
+        // Step a
+        System.out.println("Step a");
+        Comparator greaterThan = new Comparator(ComparatorMode.GREATER);
+        DurationFilter graterThan400Seconds = new DurationFilter(400, greaterThan);
+        founds = master.find(graterThan400Seconds);
+        System.out.println(founds);
+        founds.clear();
+        // Step b
+        System.out.println("Step b");
+        GenreFilter containsRock = new GenreFilter("rock");
+        founds = master.find(containsRock);
+        System.out.println(founds);
+        founds.clear();
+        // Step c
+        System.out.println("Step c");
+        ArtistFilter artistLMFAO = new ArtistFilter("LMFAO");
+        NotFilter notArtistLMFAO = new NotFilter(artistLMFAO);
+        AndFilter andFilter = new AndFilter(containsRock, notArtistLMFAO);
+        founds = master.find(andFilter);
+        System.out.println(founds);
+        founds.clear();
+        // Step d
+        System.out.println("Step d");
+        YearFilter greaterThan2016 = new YearFilter(2006, greaterThan);
+        ArtistFilter artistColdplay = new ArtistFilter("coldplay");
+        AndFilter andFilter1 = new AndFilter(containsRock, greaterThan2016);
+        AndFilter andFilter2 = new AndFilter(containsRock, artistColdplay);
+        OrFilter orFilter = new OrFilter(andFilter1, andFilter2);
+        founds = master.find(orFilter);
+        System.out.println(founds);
+        founds.clear();
+
+
     }
 }
