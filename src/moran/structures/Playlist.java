@@ -1,8 +1,8 @@
 package moran.structures;
 
 import moran.filters.Filter;
-
 import java.util.Vector;
+import java.util.Collections;
 
 public class Playlist extends Element {
     Vector<Element> elementVector;
@@ -14,6 +14,18 @@ public class Playlist extends Element {
 
     public void add(Element element) {
         elementVector.add(element);
+    }
+
+    public boolean swap(int index1, int index2) {
+        if (inRange(index1) && inRange(index2)){
+            Collections.swap(elementVector,index1,index2);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean inRange(int index) {
+        return ((index >= 0) && (index < elementVector.size()));
     }
 
     @Override
