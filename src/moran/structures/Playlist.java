@@ -34,6 +34,10 @@ public class Playlist extends Element implements Iterable<Element> {
 //        return elementVector.elementAt(index);
 //    }
 
+    public int indexOf(Element element){
+        return elementVector.indexOf(element);
+    }
+
     public boolean swap(int index1, int index2) {
         if (inRange(index1) && inRange(index2)) {
             Collections.swap(elementVector, index1, index2);
