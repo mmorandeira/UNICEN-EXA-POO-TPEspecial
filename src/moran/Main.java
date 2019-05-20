@@ -1,6 +1,7 @@
 package moran;
 
 import moran.filters.*;
+import moran.structures.AutomaticPlaylist;
 import moran.structures.Element;
 import moran.structures.Playlist;
 import moran.structures.Track;
@@ -133,9 +134,30 @@ public class Main {
         System.out.println(loMejor.totalDuration());
         System.out.println(coldplay.totalDuration());
         founds = master.find(graterThan400Seconds);
-        System.out.println(founds);
+        System.out.println(founds.totalDuration());
         founds.clear();
         // Step 6
-
+        System.out.println("Step 6");
+        Playlist loMejorMasMas = loMejor.copy();
+        loMejorMasMas.setName("Lo mejor++");
+        int pista3 = loMejorMasMas.indexOf(trackVector.elementAt(2));
+        int pista7 = loMejorMasMas.indexOf(trackVector.elementAt(6));
+        System.out.println(pista3);
+        System.out.println(pista7);
+        if (pista3 != -1 && pista7 != -1) {
+            loMejorMasMas.swap(pista3, pista7);
+        }
+        System.out.println(loMejor);
+        System.out.println(loMejorMasMas);
+        // Step 7
+        System.out.println("Step 7");
+        AutomaticPlaylist todoLoDeColdplay = new AutomaticPlaylist("Todo lo de Coldplay", artistColdplay, master);
+        System.out.println(todoLoDeColdplay);
+        // Step 8
+        System.out.println("Step 8");
+        Track paradise = new Track(13, 365, 2011, "Paradise", "Coldplay", "Mylo Xyloto", "Rock alternativo", "denunciado maquinola");
+        trackVector.add(paradise);
+        master.add(paradise);
+        System.out.println(todoLoDeColdplay);
     }
 }
