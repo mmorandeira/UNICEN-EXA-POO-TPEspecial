@@ -74,7 +74,7 @@ public class Track extends Element {
                 " - " + this.getArtist() +
                 " - " + this.getAlbumTitle() +
                 " - (" + this.getGenre() +
-                "," + this.getYear()  +
+                "," + this.getYear() +
                 ") }";
     }
 
@@ -107,8 +107,8 @@ public class Track extends Element {
     }
 
     @Override
-    public Vector<Element> find(Filter filter) {
-        Vector<Element> aux = new Vector<Element>();
+    public Playlist find(Filter filter) {
+        Playlist aux = new Playlist("Founds");
         if (filter.accept(this)) {
             aux.add(this);
         }

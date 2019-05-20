@@ -1,10 +1,14 @@
 package moran.structures;
 
 import moran.filters.Filter;
+
+import java.util.Iterator;
+import java.util.Spliterator;
 import java.util.Vector;
 import java.util.Collections;
+import java.util.function.Consumer;
 
-public class Playlist extends Element {
+public class Playlist extends Element implements Iterable<Element> {
     Vector<Element> elementVector;
 
     public Playlist(String name) {
@@ -16,9 +20,23 @@ public class Playlist extends Element {
         elementVector.add(element);
     }
 
+    public void addAll(Playlist playlist) {
+        for (Element element : playlist) {
+            this.add(element);
+        }
+    }
+
+    public void clear() {
+        this.elementVector.clear();
+    }
+
+//    public Element elementAt(int index){
+//        return elementVector.elementAt(index);
+//    }
+
     public boolean swap(int index1, int index2) {
-        if (inRange(index1) && inRange(index2)){
-            Collections.swap(elementVector,index1,index2);
+        if (inRange(index1) && inRange(index2)) {
+            Collections.swap(elementVector, index1, index2);
             return true;
         }
         return false;
@@ -30,12 +48,7 @@ public class Playlist extends Element {
 
     @Override
     public String toString() {
-        String aux = "{\n";
-        for (int i = 0; i < elementVector.size(); i++) {
-            aux += i + ": " + elementVector.elementAt(i).toString() + "\n";
-        }
-        aux += "}";
-        return aux;
+        return elementVector.toString();
     }
 
     @Override
@@ -57,8 +70,8 @@ public class Playlist extends Element {
     }
 
     @Override
-    public Vector<Element> find(Filter filter) {
-        Vector<Element> aux = new Vector<Element>();
+    public Playlist find(Filter filter) {
+        Playlist aux = new Playlist("Founds");
         for (Element element : elementVector) {
             aux.addAll(element.find(filter));
         }
@@ -74,4 +87,19 @@ public class Playlist extends Element {
         return copy;
     }
 
+
+    @Override
+    public Iterator iterator() {
+        return elementVector.iterator();
+    }
+
+    @Override
+    public void forEach(Consumer action) {
+        elementVector.forEach(action);
+    }
+
+    @Override
+    public Spliterator spliterator() {
+        return elementVector.spliterator();
+    }
 }

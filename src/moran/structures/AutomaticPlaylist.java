@@ -7,48 +7,38 @@ import java.util.Vector;
 
 public class AutomaticPlaylist extends Element {
     private Filter criteria;
-    private Vector<Track> trackVector;
+    private Playlist playlist;
 
-    public AutomaticPlaylist(String name, Filter criteria, Vector<Track> trackVector) {
+    public AutomaticPlaylist(String name, Filter criteria, Playlist playlist) {
         super(name);
         this.criteria = criteria;
-        this.trackVector = trackVector;
+        this.playlist = playlist;
     }
 
     @Override
     public int totalDuration() {
-        int duration = 0;
-        for (Track track : trackVector) {
-            if (criteria.accept(track))
-                duration += track.getDuration();
-        }
-        return duration;
+        return this.playlist.find(criteria).totalDuration();
     }
 
     @Override
     public int size() {
-        int size = 0;
-        for (Track track : trackVector) {
-            if (criteria.accept(track))
-                size++;
-        }
-        return size;
+        return this.playlist.find(criteria).size();
     }
 
     @Override
-    public Vector<Element> find(Filter filter) {
-        Vector<Element> result = new Vector<Element>();
+    public Playlist find(Filter filter) {
         AndFilter aux = new AndFilter(this.criteria, filter);
-        for (Track track : trackVector) {
-            if (aux.accept(track))
-                result.add(track);
-        }
+        Playlist result = this.playlist.find(aux);
         return result;
     }
 
     @Override
     public Element copy() {
-        return new AutomaticPlaylist(this.getName(), this.criteria, this.trackVector);
+        return new AutomaticPlaylist(this.getName(), this.criteria, this.playlist);
     }
 
+    @Override
+    public String toString() {
+        return this.playlist.find(criteria).toString();
+    }
 }

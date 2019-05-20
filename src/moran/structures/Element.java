@@ -23,7 +23,7 @@ public abstract class Element { //implements Cloneable {
         this.name = name;
     }
 
-    public abstract Vector<Element> find(Filter filter);
+    public abstract Playlist find(Filter filter);
 
     public abstract Element copy(); //nose como implementar cloneable
 

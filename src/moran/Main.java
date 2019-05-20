@@ -14,6 +14,7 @@ import java.util.Vector;
 public class Main {
     public static void main(String[] args) {
         Playlist master = new Playlist("Master");
+        System.out.println("Step 1");
         File file = new File("pistas.txt");
         Vector<Track> trackVector = new Vector<Track>();
         Scanner sc = null;
@@ -64,6 +65,7 @@ public class Main {
 //        */
 
         // Step 1 of the guide
+        System.out.println("Step 2");
         Playlist clasicosDelRock = new Playlist("Clasicos del Rock");
         clasicosDelRock.add(trackVector.elementAt(0));
         clasicosDelRock.add(trackVector.elementAt(1));
@@ -84,14 +86,16 @@ public class Main {
         elIndio.add(trackVector.elementAt(10));
         elIndio.add(trackVector.elementAt(11));
 
-        // Step 2 of the guide
+        // Step 3 of the guide
+        System.out.println("Step 3");
         System.out.println(clasicosDelRock);
         System.out.println(loMejor);
         System.out.println(coldplay);
 
-        // Step 3 of the guide
-        Vector<Element> founds = new Vector<Element>();
+        // Step 4 of the guide
+        Playlist founds;
         // Step a
+        System.out.println("Step 4");
         System.out.println("Step a");
         Comparator greaterThan = new Comparator(ComparatorMode.GREATER);
         DurationFilter graterThan400Seconds = new DurationFilter(400, greaterThan);
@@ -122,7 +126,16 @@ public class Main {
         founds = master.find(orFilter);
         System.out.println(founds);
         founds.clear();
-
+        // Step 5
+        System.out.println("Step 5");
+        System.out.println(master.totalDuration());
+        System.out.println(clasicosDelRock.totalDuration());
+        System.out.println(loMejor.totalDuration());
+        System.out.println(coldplay.totalDuration());
+        founds = master.find(graterThan400Seconds);
+        System.out.println(founds);
+        founds.clear();
+        // Step 6
 
     }
 }
