@@ -1,11 +1,14 @@
 package moran;
 
 import moran.filters.*;
+import moran.structures.AutomaticPlaylist;
+import moran.structures.Element;
 import moran.structures.Playlist;
 import moran.structures.Track;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -104,7 +107,46 @@ public class Main {
         System.out.println(master.find(new AndFilter(new TitleFilter("rock"), new NotFilter(new ArtistFilter("LMFAO")))));
         //d
         System.out.println(master.find(new OrFilter(new AndFilter(new GenreFilter("rock"), new YearFilter(2006, mayor)), new AndFilter(new GenreFilter("rock"), new ArtistFilter("coldplay")))));
+
+
+
         /// 5
+
+        System.out.println(clasicosDelRock.totalDuration());
+        System.out.println(loMejor.totalDuration());
+        System.out.println(coldplay.totalDuration());
+        System.out.println(elIndio.totalDuration());
+
+                //5-4a
+
+        Playlist cuatroA= new Playlist("cuatroA");
+        Vector<Element> cancionA=master.find(new DurationFilter(400, mayor));
+        for(int i=0;i<cancionA.size();i++)
+            {
+                cuatroA.add(cancionA.get(i));
+            }
+        System.out.println(cuatroA.totalDuration());
+
+        ///6
+        Playlist losupermejor=loMejor.copy();
+        losupermejor.setName("Lo mejor++");
+        //nose como intercambiar los elementos ,se me ocurre usar
+        // Playlist losupermejor=new Playlist;
+        // losupermejor.setName("Lo mejor++");
+        // losupermejor.add(loMejor.find(new DurationFilter(0,mayor).get(1);
+        // losupermejor.add(loMejor.find(new DurationFilter(0,mayor).get(0);
+        // losupermejor.add(loMejor.find(new DurationFilter(0,mayor).get(2);
+        // PERO ESTA MAL
+        System.out.println(losupermejor);
+        System.out.println(loMejor);
+        //7
+        AutomaticPlaylist todoColdplay=new AutomaticPlaylist("Todo lo de Coldplay",new ArtistFilter("Coldplay"),trackVector);
+        System.out.println(todoColdplay);
+        //8
+        Track ochoA=new Track(13, 365, 2011, "Paradise", "Coldplay", "Mylo Xyloto", "Rock alternativo", "denunciado maquinola");
+        trackVector.add(ochoA);
+        master.add(ochoA);
+
 
     }
 }
