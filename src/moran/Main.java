@@ -146,6 +146,7 @@ public class Main {
         Track ochoA=new Track(13, 365, 2011, "Paradise", "Coldplay", "Mylo Xyloto", "Rock alternativo", "denunciado maquinola");
         trackVector.add(ochoA);
         master.add(ochoA);
+        System.out.println(todoColdplay);
 
 
     }
