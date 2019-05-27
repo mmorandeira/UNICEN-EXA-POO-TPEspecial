@@ -129,12 +129,12 @@ public class Main {
         founds.clear();
         // Step 5
         System.out.println("Step 5");
-        System.out.println(master.totalDuration());
-        System.out.println(clasicosDelRock.totalDuration());
-        System.out.println(loMejor.totalDuration());
-        System.out.println(coldplay.totalDuration());
+        System.out.println(master.getName() + ": " + master.totalDuration());
+        System.out.println(clasicosDelRock.getName() + ": " + clasicosDelRock.totalDuration());
+        System.out.println(loMejor.getName() + ": " + loMejor.totalDuration());
+        System.out.println(coldplay.getName() + ": " + coldplay.totalDuration());
         founds = master.find(graterThan400Seconds);
-        System.out.println(founds.totalDuration());
+        System.out.println(founds.getName() + ": " + founds.totalDuration());
         founds.clear();
         // Step 6
         System.out.println("Step 6");
@@ -142,8 +142,6 @@ public class Main {
         loMejorMasMas.setName("Lo mejor++");
         int pista3 = loMejorMasMas.indexOf(trackVector.elementAt(2));
         int pista7 = loMejorMasMas.indexOf(trackVector.elementAt(6));
-        System.out.println(pista3);
-        System.out.println(pista7);
         if (pista3 != -1 && pista7 != -1) {
             loMejorMasMas.swap(pista3, pista7);
         }

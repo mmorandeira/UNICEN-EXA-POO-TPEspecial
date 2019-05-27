@@ -20,6 +20,10 @@ public class Playlist extends Element implements Iterable<Element> {
         elementVector.add(element);
     }
 
+    public boolean remove(Element element) {
+        return elementVector.remove(element);
+    }
+
     public void addAll(Playlist playlist) {
         for (Element element : playlist) {
             this.add(element);
@@ -30,11 +34,7 @@ public class Playlist extends Element implements Iterable<Element> {
         this.elementVector.clear();
     }
 
-//    public Element elementAt(int index){
-//        return elementVector.elementAt(index);
-//    }
-
-    public int indexOf(Element element){
+    public int indexOf(Element element) {
         return elementVector.indexOf(element);
     }
 
@@ -91,19 +91,10 @@ public class Playlist extends Element implements Iterable<Element> {
         return copy;
     }
 
-
     @Override
     public Iterator iterator() {
-        return elementVector.iterator();
+        return Collections.unmodifiableCollection(elementVector).iterator();
+        //return elementVector.iterator();
     }
 
-    @Override
-    public void forEach(Consumer action) {
-        elementVector.forEach(action);
-    }
-
-    @Override
-    public Spliterator spliterator() {
-        return elementVector.spliterator();
-    }
 }
