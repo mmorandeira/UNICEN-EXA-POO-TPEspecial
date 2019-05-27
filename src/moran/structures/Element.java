@@ -2,8 +2,6 @@ package moran.structures;
 
 import moran.filters.Filter;
 
-import java.util.Vector;
-
 public abstract class Element { //implements Cloneable {
     private String name;
 

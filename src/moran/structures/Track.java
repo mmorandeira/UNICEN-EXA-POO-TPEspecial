@@ -1,9 +1,7 @@
 package moran.structures;
 
 import moran.filters.Filter;
-
 import java.util.Objects;
-import java.util.Vector;
 
 public class Track extends Element {
     int id, duration, year;

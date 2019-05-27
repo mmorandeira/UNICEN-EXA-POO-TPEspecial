@@ -3,10 +3,8 @@ package moran.structures;
 import moran.filters.Filter;
 
 import java.util.Iterator;
-import java.util.Spliterator;
 import java.util.Vector;
 import java.util.Collections;
-import java.util.function.Consumer;
 
 public class Playlist extends Element implements Iterable<Element> {
     Vector<Element> elementVector;

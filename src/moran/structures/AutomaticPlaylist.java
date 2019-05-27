@@ -3,8 +3,6 @@ package moran.structures;
 import moran.filters.AndFilter;
 import moran.filters.Filter;
 
-import java.util.Vector;
-
 public class AutomaticPlaylist extends Element {
     private Filter criteria;
     private Playlist playlist;
