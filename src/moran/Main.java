@@ -35,35 +35,13 @@ public class Main {
             String albumTitle = sc.next();
             int year = Integer.parseInt(sc.next());
             String genre = sc.next();
-            Track p1 = new Track(id, duration, year, title, artist, albumTitle, genre, "denunciado maquinola");
+            Track p1 = new Track(id, duration, year, title, artist, albumTitle, genre, "comentario");
             //System.out.println(p1);
             trackVector.add(p1);
             master.add(p1);
             sc.nextLine();
         }
         sc.close();
-//        //System.out.println("hola");
-//        Track copy;
-//        /*
-//        try {
-//            copy = (Track) trackVector.elementAt(0).clone();
-//            System.out.println(copy);
-//        } catch (CloneNotSupportedException e) {
-//            e.printStackTrace();
-//        }
-//        */
-//        copy = trackVector.elementAt(0).copy();
-//        //System.out.println(copy);
-//        System.out.println(master);
-//        /*
-//        Comparator c1 = new Comparator(ComparatorMode.GREATER);
-//        YearFilter f1 = new YearFilter(2006,c1);
-//        for(Track track:trackVector){
-//            if(f1.accept(track)){
-//                System.out.println(track);
-//            }
-//        }
-//        */
 
         // Step 1 of the guide
         System.out.println("Step 2");
@@ -95,6 +73,7 @@ public class Main {
 
         // Step 4 of the guide
         Playlist founds;
+
         // Step a
         System.out.println("Step 4");
         System.out.println("Step a");
@@ -103,12 +82,14 @@ public class Main {
         founds = master.find(graterThan400Seconds);
         System.out.println(founds);
         founds.clear();
+
         // Step b
         System.out.println("Step b");
         GenreFilter containsRock = new GenreFilter("rock");
         founds = master.find(containsRock);
         System.out.println(founds);
         founds.clear();
+
         // Step c
         System.out.println("Step c");
         ArtistFilter artistLMFAO = new ArtistFilter("LMFAO");
@@ -117,6 +98,7 @@ public class Main {
         founds = master.find(andFilter);
         System.out.println(founds);
         founds.clear();
+
         // Step d
         System.out.println("Step d");
         YearFilter greaterThan2016 = new YearFilter(2006, greaterThan);
@@ -127,6 +109,7 @@ public class Main {
         founds = master.find(orFilter);
         System.out.println(founds);
         founds.clear();
+
         // Step 5
         System.out.println("Step 5");
         System.out.println(master.getName() + ": " + master.totalDuration());
@@ -136,6 +119,7 @@ public class Main {
         founds = master.find(graterThan400Seconds);
         System.out.println(founds.getName() + ": " + founds.totalDuration());
         founds.clear();
+
         // Step 6
         System.out.println("Step 6");
         Playlist loMejorMasMas = loMejor.copy();
@@ -147,13 +131,15 @@ public class Main {
         }
         System.out.println(loMejor);
         System.out.println(loMejorMasMas);
+
         // Step 7
         System.out.println("Step 7");
         AutomaticPlaylist todoLoDeColdplay = new AutomaticPlaylist("Todo lo de Coldplay", artistColdplay, master);
         System.out.println(todoLoDeColdplay);
+
         // Step 8
         System.out.println("Step 8");
-        Track paradise = new Track(13, 365, 2011, "Paradise", "Coldplay", "Mylo Xyloto", "Rock alternativo", "denunciado maquinola");
+        Track paradise = new Track(13, 365, 2011, "Paradise", "Coldplay", "Mylo Xyloto", "Rock alternativo", "comentario");
         trackVector.add(paradise);
         master.add(paradise);
         System.out.println(todoLoDeColdplay);
