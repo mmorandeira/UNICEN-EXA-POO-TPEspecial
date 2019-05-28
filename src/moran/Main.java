@@ -94,7 +94,8 @@ public class Main {
         System.out.println("Step c");
         ArtistFilter artistLMFAO = new ArtistFilter("LMFAO");
         NotFilter notArtistLMFAO = new NotFilter(artistLMFAO);
-        AndFilter andFilter = new AndFilter(containsRock, notArtistLMFAO);
+        ArtistFilter artistRock = new ArtistFilter("rock");
+        AndFilter andFilter = new AndFilter(artistRock, notArtistLMFAO);
         founds = master.find(andFilter);
         System.out.println(founds);
         founds.clear();
