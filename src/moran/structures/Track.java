@@ -24,13 +24,13 @@ public class Track extends Element {
 
     public Track(Track trackToCopy) {
         super(trackToCopy.getName());
-        this.id = trackToCopy.id;
-        this.duration = trackToCopy.duration;
-        this.year = trackToCopy.year;
-        this.artist = trackToCopy.artist;
-        this.albumTitle = trackToCopy.albumTitle;
-        this.genre = trackToCopy.genre;
-        this.comments = trackToCopy.comments;
+        this.id = trackToCopy.getId();
+        this.duration = trackToCopy.getDuration();
+        this.year = trackToCopy.getYear();
+        this.artist = trackToCopy.getArtist();
+        this.albumTitle = trackToCopy.getAlbumTitle();
+        this.genre = trackToCopy.getGenre();
+        this.comments = trackToCopy.getComments();
     }
 
     public int getDuration() {
