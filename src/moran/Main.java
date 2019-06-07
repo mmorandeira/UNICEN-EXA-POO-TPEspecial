@@ -16,32 +16,68 @@ public class Main {
     public static void main(String[] args) {
         Playlist master = new Playlist("Master");
         System.out.println("Step 1");
-        File file = new File("pistas.txt");
+//        File file = new File("pistas.txt");
         Vector<Track> trackVector = new Vector<Track>();
-        Scanner sc = null;
-        try {
-            sc = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        sc.useDelimiter(";");
-        sc.nextLine();
-        sc.nextLine();
-        while (sc.hasNext()) {
-            int id = Integer.parseInt(sc.next());
-            String title = sc.next();
-            int duration = Integer.parseInt(sc.next());
-            String artist = sc.next();
-            String albumTitle = sc.next();
-            int year = Integer.parseInt(sc.next());
-            String genre = sc.next();
-            Track p1 = new Track(id, duration, year, title, artist, albumTitle, genre, "comentario");
-            //System.out.println(p1);
-            trackVector.add(p1);
-            master.add(p1);
-            sc.nextLine();
-        }
-        sc.close();
+//        Scanner sc = null;
+//        try {
+//            sc = new Scanner(file);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        sc.useDelimiter(";");
+//        sc.nextLine();
+//        sc.nextLine();
+//        while (sc.hasNext()) {
+//            int id = Integer.parseInt(sc.next());
+//            String title = sc.next();
+//            int duration = Integer.parseInt(sc.next());
+//            String artist = sc.next();
+//            String albumTitle = sc.next();
+//            int year = Integer.parseInt(sc.next());
+//            String genre = sc.next();
+//            Track p1 = new Track(id, duration, year, title, artist, albumTitle, genre, "comentario");
+//            //System.out.println(p1);
+//            trackVector.add(p1);
+//            master.add(p1);
+//            sc.nextLine();
+//        }
+//        sc.close();
+        Track t1 = new Track(1, 311, 2002, "El Tiempo No Para", "Bersuit Vergabarat", "De la cabeza", "Rock nacional", "comentario");
+        trackVector.add(t1);
+        master.add(t1);
+        Track t2 = new Track(2, 290, 2002, "Mi caramelo", "Bersuit Vergabarat", "De la cabeza", "Rock nacional", "comentario");
+        trackVector.add(t2);
+        master.add(t2);
+        Track t3 = new Track(3, 408, 2011, "Party Rock Anthem", "LMFAO", "Sorry for Party Rocking", "Electro pop", "comentario");
+        trackVector.add(t3);
+        master.add(t3);
+        Track t4 = new Track(4, 421, 2011, "Sorry for Party Rocking", "LMFAO", "Sorry for Party Rocking", "Electro pop", "comentario");
+        trackVector.add(t4);
+        master.add(t4);
+        Track t5 = new Track(5, 255, 2005, "Fix you", "Coldplay", "X&Y", "Rock alternativo", "comentario");
+        trackVector.add(t5);
+        master.add(t5);
+        Track t6 = new Track(6, 455, 2005, "Speed of Sound", "Coldplay", "X&Y", "Rock alternativo", "comentario");
+        trackVector.add(t6);
+        master.add(t6);
+        Track t7 = new Track(7, 320, 2008, "Viva la vida", "Coldplay", "Viva la vida", "Rock alternativo", "comentario");
+        trackVector.add(t7);
+        master.add(t7);
+        Track t8 = new Track(8, 360, 1987, "Whit or whitout you", "U2", "The Joshua Tree", "Rock", "comentario");
+        trackVector.add(t8);
+        master.add(t8);
+        Track t9 = new Track(9, 355, 2004, "Vertigo", "U2", "How to Dismantle an Atomic Bomb", "Rock", "comentario");
+        trackVector.add(t9);
+        master.add(t9);
+        Track t10 = new Track(10, 284, 2004, "City of Blinding Lights", "U2", "How to Dismantle an Atomic Bomb", "Rock", "comentario");
+        trackVector.add(t10);
+        master.add(t10);
+        Track t11 = new Track(11, 438, 2013, "A la luz de la luna", "El Indio Solari", "Pajaritos, bravos muchachitos", "Rock nacional", "comentario");
+        trackVector.add(t11);
+        master.add(t11);
+        Track t12 = new Track(12, 258, 1993, "Yo Canibal", "Patricio rey y sus redonditos de ricota", "Lobo Suelto, Cordero atado", "Rock nacional", "comentario");
+        trackVector.add(t12);
+        master.add(t12);
 
         // Step 1 of the guide
         System.out.println("Step 2");
